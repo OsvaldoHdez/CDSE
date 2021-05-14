@@ -1,1 +1,1 @@
-#### Cómputo distribuido
+# Cómputo distribuido
