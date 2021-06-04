@@ -53,8 +53,6 @@ class CustomLayout extends React.Component {
 const mapStateToProps = state => {
   return {
     userId: state.auth.userId,
-    token: state.auth.token,
-    is_teacher: state.auth.is_teacher
   };
 };
 
