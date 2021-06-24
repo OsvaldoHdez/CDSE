@@ -4,6 +4,7 @@ import { Card, Skeleton, message } from "antd";
 import Questions from "./Questions";
 import Choices from "../components/Choices";
 import { getASNTSDetail } from "../store/actions/assignments";
+import { createGradedASNT } from "../store/actions/gradedAssignments";
 import Hoc from "../hoc/hoc";
 
 const cardStyle = {
@@ -99,7 +100,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getASNTSDetail: (token, id) => dispatch(getASNTSDetail(token, id))
+        getASNTSDetail: (token, id) => dispatch(getASNTSDetail(token, id)),
+        createGradedASNT: (token, asnt) => dispatch(createGradedASNT(token, asnt))
     };
 };
 

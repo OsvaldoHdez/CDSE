@@ -1,8 +1,7 @@
-import React from 'react';
-import { Steps, Button, message } from 'antd';
-import { render } from 'react-dom';
+import React from "react";
+import { Steps, Button } from "antd";
 
-const { Step } = Steps;
+const Step = Steps.Step;
 
 class Questions extends React.Component {
     state = {
@@ -18,11 +17,12 @@ class Questions extends React.Component {
         const current = this.state.current - 1;
         this.setState({ current });
     }
+
     render() {
         const { current } = this.state;
-        const { questions } = this.props
+        const { questions } = this.props;
         return (
-            <div style={{ height: "100%" }}>
+            <div>
                 <Steps progressDot current={current}>
                     {questions.map((q, index) => (
                         <Step key={index} />
@@ -32,17 +32,17 @@ class Questions extends React.Component {
                 <div>
                     {current < questions.length - 1 && (
                         <Button type="primary" onClick={() => this.next()}>
-                            Next
+                            Siguiente
                         </Button>
                     )}
                     {current === questions.length - 1 && (
-                        <Button type="primary" onClick={() => message.success('Processing complete!')}>
-                            Done
+                        <Button type="primary" onClick={() => this.props.submit()}>
+                            Enviar
                         </Button>
                     )}
                     {current > 0 && (
                         <Button style={{ marginLeft: 8 }} onClick={() => this.prev()}>
-                            Previous
+                            Anterior
                         </Button>
                     )}
                 </div>

@@ -59,11 +59,11 @@ class RegistrationForm extends React.Component {
       <Form onSubmit={this.handleSubmit}>
         <FormItem>
           {getFieldDecorator("userName", {
-            rules: [{ required: true, message: "Please input your username!" }]
+            rules: [{ required: true, message: "Introduce tu nombre de usuario!" }]
           })(
             <Input
               prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
-              placeholder="Username"
+              placeholder="Nombre de usuario"
             />
           )}
         </FormItem>
@@ -73,17 +73,17 @@ class RegistrationForm extends React.Component {
             rules: [
               {
                 type: "email",
-                message: "The input is not valid E-mail!"
+                message: "El correo electrónico introducido es invalido!"
               },
               {
                 required: true,
-                message: "Please input your E-mail!"
+                message: "Por favor, introduce un correo electrónico!"
               }
             ]
           })(
             <Input
               prefix={<Icon type="mail" style={{ color: "rgba(0,0,0,.25)" }} />}
-              placeholder="Email"
+              placeholder="Correo electrónico"
             />
           )}
         </FormItem>
@@ -93,7 +93,7 @@ class RegistrationForm extends React.Component {
             rules: [
               {
                 required: true,
-                message: "Please input your password!"
+                message: "Por favor, introduce una contraseña!"
               },
               {
                 validator: this.validateToNextPassword
@@ -103,7 +103,7 @@ class RegistrationForm extends React.Component {
             <Input
               prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
               type="password"
-              placeholder="Password"
+              placeholder="Contraseña"
             />
           )}
         </FormItem>
@@ -113,7 +113,7 @@ class RegistrationForm extends React.Component {
             rules: [
               {
                 required: true,
-                message: "Please confirm your password!"
+                message: "Por favor, confirma tu contraseña!"
               },
               {
                 validator: this.compareToFirstPassword
@@ -123,7 +123,7 @@ class RegistrationForm extends React.Component {
             <Input
               prefix={<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />}
               type="password"
-              placeholder="Password"
+              placeholder="Contraseña"
               onBlur={this.handleConfirmBlur}
             />
           )}
@@ -134,13 +134,13 @@ class RegistrationForm extends React.Component {
             rules: [
               {
                 required: true,
-                message: "Please select a user!"
+                message: "Por favor, selecciona un tipo de usuario!"
               }
             ]
           })(
-            <Select placeholder="Select a user type">
-              <Option value="student">Student</Option>
-              <Option value="teacher">Teacher</Option>
+            <Select placeholder="Selecciona un tipo de usuario:">
+              <Option value="student">Estudiante</Option>
+              <Option value="teacher">Profesor</Option>
             </Select>
           )}
         </FormItem>
@@ -151,11 +151,12 @@ class RegistrationForm extends React.Component {
             htmlType="submit"
             style={{ marginRight: "10px" }}
           >
-            Signup
+            Registrarse
           </Button>
-          Or
+          O
           <NavLink style={{ marginRight: "10px" }} to="/login/">
-            login
+            {" "}
+            Inicia sesión
           </NavLink>
         </FormItem>
       </Form>

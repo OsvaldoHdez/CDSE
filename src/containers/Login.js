@@ -35,14 +35,14 @@ class NormalLoginForm extends React.Component {
             <FormItem>
               {getFieldDecorator("userName", {
                 rules: [
-                  { required: true, message: "Please input your username!" }
+                  { required: true, message: "Introduce tu nombre de usuario!" }
                 ]
               })(
                 <Input
                   prefix={
                     <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
                   }
-                  placeholder="Username"
+                  placeholder="Nombre de usuario"
                 />
               )}
             </FormItem>
@@ -50,7 +50,7 @@ class NormalLoginForm extends React.Component {
             <FormItem>
               {getFieldDecorator("password", {
                 rules: [
-                  { required: true, message: "Please input your Password!" }
+                  { required: true, message: "Por favor, introduce tu contraseña!" }
                 ]
               })(
                 <Input
@@ -58,7 +58,7 @@ class NormalLoginForm extends React.Component {
                     <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
                   }
                   type="password"
-                  placeholder="Password"
+                  placeholder="Contraseña"
                 />
               )}
             </FormItem>
@@ -69,12 +69,12 @@ class NormalLoginForm extends React.Component {
                 htmlType="submit"
                 style={{ marginRight: "10px" }}
               >
-                Login
+                Iniciar sesión
               </Button>
-              Or
+              O
               <NavLink style={{ marginRight: "10px" }} to="/signup/">
                 {" "}
-                signup
+                Registrarse
               </NavLink>
             </FormItem>
           </Form>

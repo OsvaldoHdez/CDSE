@@ -109,7 +109,6 @@ export const createASNT = (token, asnt) => {
         axios
             .post(`http://127.0.0.1:8000/assignments/`, asnt)
             .then(res => {
-                const assignment = res.data;
                 dispatch(createASNTSuccess());
             })
             .catch(err => {
