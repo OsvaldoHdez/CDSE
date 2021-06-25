@@ -27,7 +27,7 @@ class Profile extends React.PureComponent {
                     <Skeleton active />
                 ) : (
                     <Hoc>
-                        <h1>Hi {this.props.username}</h1>
+                        <h1>Hola, {this.props.username}</h1>
                         <List
                             size="large"
                             dataSource={this.props.gradedAssignments}

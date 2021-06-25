@@ -36,7 +36,7 @@ class AssignmentList extends React.PureComponent {
                     <Skeleton active />
                 ) : (
                     < div >
-                        <h3 style={{ margin: "16px 0" }}>Assignment List</h3>
+                        <h3 style={{ margin: "16px 0" }}>Lista de cuestionarios</h3>
                         <List
                             size="large"
                             bordered

@@ -70,27 +70,27 @@ class AssignmentCreate extends React.Component {
         }
         return (
             <Form onSubmit={this.handleSubmit}>
-                <h1>Create an assignment</h1>
-                <FormItem label={"Title: "}>
+                <h1>Crear un cuestionario</h1>
+                <FormItem label={"Título: "}>
                     {getFieldDecorator(`title`, {
                         validateTrigger: ["onChange", "onBlur"],
                         rules: [
                             {
                                 required: true,
-                                message: "Please input a title"
+                                message: "Ingrese un título"
                             }
                         ]
-                    })(<Input placeholder="Add a title" />)}
+                    })(<Input placeholder="Agrega un título" />)}
                 </FormItem>
                 {questions}
                 <FormItem>
                     <Button type="secondary" onClick={this.add}>
-                        <Icon type="plus" /> Add question
+                        <Icon type="plus" /> Agregar pregunta
                     </Button>
                 </FormItem>
                 <FormItem>
                     <Button type="primary" htmlType="submit">
-                        Submit
+                        Enviar
                     </Button>
                 </FormItem>
             </Form>

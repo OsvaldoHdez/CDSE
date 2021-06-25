@@ -30,17 +30,17 @@ class QuestionForm extends React.Component {
         getFieldDecorator("keys", { initialValue: [] });
         const keys = getFieldValue("keys");
         const formItems = keys.map((k, index) => (
-            <FormItem label={index === 0 ? "Choices" : ""} key={k}>
+            <FormItem label={index === 0 ? "Opciones" : ""} key={k}>
                 {getFieldDecorator(`questions[${this.props.id}]choices[${k}]`, {
                     validateTrigger: ["onChange", "onBlur"],
                     rules: [
                         {
                             required: true,
                             whitespace: true,
-                            message: "Please input a choice to the question"
+                            message: "Ingrese una opción para la pregunta"
                         }
                     ]
-                })(<Input placeholder="Answer choice" />)}
+                })(<Input placeholder="Opción para respuesta" />)}
                 {keys.length > 1 ? (
                     <Icon
                         className="dynamic-delete-button"
@@ -53,32 +53,32 @@ class QuestionForm extends React.Component {
         ));
         return (
             <Hoc>
-                <FormItem label="Question: ">
+                <FormItem label="Pregunta: ">
                     {getFieldDecorator(`question[${this.props.id}]`, {
                         validateTrigger: ["onChange", "onBlur"],
                         rules: [
                             {
                                 required: true,
-                                message: "Please input a question"
+                                message: "Ingrese una pregunta"
                             }
                         ]
-                    })(<Input placeholder="Add a question" />)}
+                    })(<Input placeholder="Agrega una pregunta" />)}
                 </FormItem>
-                <FormItem label="Answer: ">
+                <FormItem label="Respuesta: ">
                     {getFieldDecorator(`answers[${this.props.id}]`, {
                         validateTrigger: ["onChange", "onBlur"],
                         rules: [
                             {
                                 required: true,
-                                message: "Please input an answer to this question"
+                                message: "Ingrese una respuesta para la pregunta"
                             }
                         ]
-                    })(<Input placeholder="What is the answer?" />)}
+                    })(<Input placeholder="¿Cuál es la respuesta?" />)}
                 </FormItem>
                 {formItems}
                 <FormItem>
                     <Button type="dashed" onClick={this.add} style={{ width: "60%" }}>
-                        <Icon type="plus" /> Add an answer choice
+                        <Icon type="plus" /> Agregar una opción de respuesta
                     </Button>
                 </FormItem>
             </Hoc>

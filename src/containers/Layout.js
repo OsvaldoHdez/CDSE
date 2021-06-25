@@ -20,11 +20,11 @@ class CustomLayout extends React.Component {
           >
             {this.props.isAuthenticated ? (
               <Menu.Item key="2" onClick={this.props.logout}>
-                Logout
+                Salir
               </Menu.Item>
             ) : (
               <Menu.Item key="2">
-                <Link to="/login">Login</Link>
+                <Link to="/login">Iniciar sesión</Link>
               </Menu.Item>
             )}
           </Menu>
@@ -32,16 +32,16 @@ class CustomLayout extends React.Component {
         <Content style={{ padding: "0 50px" }}>
           <Breadcrumb style={{ margin: "16px 0" }}>
             <Breadcrumb.Item>
-              <Link to="/">Home</Link>
+              <Link to="/">Inicio</Link>
             </Breadcrumb.Item>
             {this.props.token !== null ? (
               <Breadcrumb.Item>
-                <Link to={`/profile/${this.props.userId}`}>Profile</Link>
+                <Link to={`/profile/${this.props.userId}`}>Perfil</Link>
               </Breadcrumb.Item>
             ) : null}
             {this.props.token !== null && this.props.is_teacher ? (
               <Breadcrumb.Item>
-                <Link to="/create">Create</Link>
+                <Link to="/create">Crear cuestionario</Link>
               </Breadcrumb.Item>
             ) : null}
           </Breadcrumb>
