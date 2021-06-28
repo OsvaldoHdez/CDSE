@@ -3,7 +3,7 @@
 from .base import *
 
 DEBUG = False
-ALLOWED_HOSTS += ['http://domain.com']
+ALLOWED_HOSTS += ['localhost', '127.0.0.1', '.herokuapp.com/']
 WSGI_APPLICATION = 'home.wsgi.prod.application'
 
 DATABASES = {
@@ -16,6 +16,7 @@ DATABASES = {
         'PORT': '',
     }
 }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},

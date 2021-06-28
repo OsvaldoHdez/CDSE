@@ -40,7 +40,7 @@ export const authLogin = (username, password) => {
   return dispatch => {
     dispatch(authStart());
     axios
-      .post("http://127.0.0.1:8000/rest-auth/login/", {
+      .post("https://cdsefinalp.herokuapp.com/rest-auth/login/", {
         username: username,
         password: password
       })
@@ -75,7 +75,7 @@ export const authSignup = (username, email, password1, password2, is_student) =>
       is_teacher: !is_student
     };
     axios
-      .post("http://127.0.0.1:8000/rest-auth/registration/", user)
+      .post("https://cdsefinalp.herokuapp.com/rest-auth/registration/", user)
       .then(res => {
         const user = {
           token: res.data.key,
